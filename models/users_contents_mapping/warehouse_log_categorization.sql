@@ -5,7 +5,7 @@
     )
 }}
 
-with warehouse_log as ( select * from {{ source('clture_production_db', 'warehouse_log') }} )
+with warehouse_log as ( select * from {{ source('clture_dev_db', 'warehouse_log') }} )
 
 select *
 	,case when service = 'GOOGLE' then 

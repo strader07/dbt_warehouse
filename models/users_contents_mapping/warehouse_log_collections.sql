@@ -5,7 +5,7 @@
     )
 }}
 
-with warehouse_log_categorization as ( select * from {{ source('clture_production_db', 'warehouse_log_categorization') }} )
+with warehouse_log_categorization as ( select * from {{ source('clture_dev_db', 'warehouse_log_categorization') }} )
 
 SELECT 
   warehouse_log_categorization.id, 
