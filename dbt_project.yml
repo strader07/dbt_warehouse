@@ -34,3 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_clture_dev:
       # Applies to all files under models/example/
+      users_contents_mapping:
+          materialized: table
+      content_monitor:
+          materialized: table
