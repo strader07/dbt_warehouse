@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: clture_dev_db
+    loader: daily_load_task
+    loaded_at_field: log_timestamp
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+    database: clture_dev_db
+    schema: public
+    tables:
+      - name: warehouse_log
+      - name: warehouse_log_categorization
+      - name: warehouse_log_categorization_mapping
+  - name: content_monitor
+    loader: daily_load_task
+    loaded_at_field: log_timestamp
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+    database: clture_dev_db
+    schema: content_monitor
+    tables:
+      - name: content_titles
